@@ -10,7 +10,7 @@ In this diagram, time progresses from top to bottom.
 
 ![fence_synchronization](fence_synchronization.png?raw=true "fence_synchronization")
 
-<h2>Vertex buffer</h2>
+<h2>Vertex buffer creation</h2>
 
 ![vertex_buffer](vertex_buffer.png?raw=true "vertex_buffer")
 
