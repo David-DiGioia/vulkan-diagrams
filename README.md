@@ -6,7 +6,7 @@ Also let me know if you have suggestions for diagrams and I will consider adding
 
 <h2>Fence synchronization</h2>
 
-In this diagram, time progresses from top to bottom.
+In this diagram, time progresses from top to bottom. There names and setup are taken from [this chapter of Vulkan Tutorial](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Rendering_and_presentation).
 
 ![fence_synchronization](fence_synchronization.png?raw=true "fence_synchronization")
 
@@ -21,3 +21,9 @@ In this diagram, time progresses from top to bottom.
 <h2>Descriptor sets</h2>
 
 ![descriptor_sets](descriptor_sets.png?raw=true "descriptor_sets")
+
+<h2>Pipeline barriers</h2>
+
+This diagram shows the general use of pipeline barriers and how they create execution dependencies and memory dependencies. The specific example in the diagram shows the pipeline barrier which transfers the image's layout from VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL to VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL. This performed after copying the image data from a buffer into the image, to prepare the image to be read from shaders. This example was taken [from this chapter of Vulkan Tutorial](https://vulkan-tutorial.com/Texture_mapping/Images).
+
+![pipeline_barriers](barrier.png?raw=true "pipeline_barriers")
