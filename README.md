@@ -8,7 +8,7 @@
 - [Render pass and swapchain](#render-pass-and-swapchain)
 - [Descriptor sets](#descriptor-sets)
 - [Pipeline barriers](#pipeline-barriers)
-- [Vertex input and bindings](#vertex-input-and-bindings)
+- [Vertex input and multiple bindings](#vertex-input-and-bindings)
 
 ## Introduction
 
@@ -68,7 +68,7 @@ The set names and quotes are taken directly from [the spec](https://www.khronos.
 
 ![pipeline_barriers](barrier.png?raw=true "pipeline_barriers")
 
-## Vertex input and bindings
+## Vertex input and multiple bindings
 
 `VkPipelineVertexInputStateCreateInfo` allows us to specify how our vertices are stored in memory. It is composed of an array of `VkVertexInputAttributeDescription`s and an array of `VkVertexInputBindingDescription`s.
 
