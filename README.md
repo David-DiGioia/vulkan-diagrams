@@ -8,7 +8,7 @@
 - [Render pass and swapchain](#render-pass-and-swapchain)
 - [Descriptor sets](#descriptor-sets)
 - [Pipeline barriers](#pipeline-barriers)
-- [Vertex input and multiple bindings](#vertex-input-and-bindings)
+- [Vertex input and multiple bindings](#vertex-input-and-multiple-bindings)
 
 ## Introduction
 
