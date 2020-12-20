@@ -8,6 +8,7 @@
 - [Render pass and swapchain](#render-pass-and-swapchain)
 - [Descriptor sets](#descriptor-sets)
 - [Pipeline barriers](#pipeline-barriers)
+- [Vertex input and bindings](#vertex-input-and-bindings)
 
 ## Introduction
 
@@ -66,3 +67,28 @@ The set names and quotes are taken directly from [the spec](https://www.khronos.
 (ctrl+f search for PDF version of spec: <b>Execution and Memory Dependencies</b>)
 
 ![pipeline_barriers](barrier.png?raw=true "pipeline_barriers")
+
+## Vertex input and bindings
+
+`VkPipelineVertexInputStateCreateInfo` allows us to specify how our vertices are stored in memory. It is composed of an array of `VkVertexInputAttributeDescription`s and an array of `VkVertexInputBindingDescription`s.
+
+As the name implies, we will have one binding description for each binding. In this example, we see that binding 0 has `VK_VERTEX_INPUT_RATE_VERTEX` as its input rate, which means it increments to the next set of data `stride` apart for every _vertex_. Binding 1, on the other hand, has `VK_VERTEX_INPUT_RATE_INSTANCE` as its input rate, so we increment to the next set of data `stride` apart only for every _instance_. We specify the number of instances and vertices we draw in `vkCmdDraw`.
+
+We have one vertex attribute for each member of the struct associated with that binding. For example, binding 0 has 3 vertex attributes since the vertex buffer bound to binding 0 is a buffer of `Vertex` structs which has members `position`, `normal` and `texCoord`. Binding 1 has only 2 vertex attributes since `InstanceData` has only 2 members. The format of each vertex attribute is determined by the size and type of that attribute, so some common choices include:
+
+```
+float:	VK_FORMAT_R32_SFLOAT
+vec2:	VK_FORMAT_R32G32_SFLOAT
+vec3:	VK_FORMAT_R32G32B32_SFLOAT
+vec4:	VK_FORMAT_R32G32B32A32_SFLOAT
+ivec2:	VK_FORMAT_R32G32_SINT
+uvec4:	VK_FORMAT_R32G32B32A32_UINT
+double:	VK_FORMAT_R64_SFLOAT
+etc.
+```
+
+In this example we make one call to `vkCmdBindVertexBuffer` and pass in arrays to bind both buffers at the same time, but note it would have been possible to make two separate calls so long as in one call we specify `firstBinding = 0` and in the other `firstBinding = 1`.
+
+Lastly, notice that the vertex shader is completely blind to which binding each of its input variables are coming from. The vertex shader only specifies the locations, then the bound buffer the data comes from for each variable is determined by the corresponding `VkVertexInputAttributeDescription`.
+
+![vertex_input](vertex_input.png?raw=true "vertex_input")
