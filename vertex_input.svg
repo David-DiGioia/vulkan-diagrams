@@ -1752,8 +1752,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.088295215"
-     inkscape:cx="18909.391"
-     inkscape:cy="-2560.9224"
+     inkscape:cx="17531.659"
+     inkscape:cy="-3175.1067"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2353,82 +2353,7 @@
            height="231.42857"
            width="891.42859"
            id="rect2411" /></flowRegion><flowPara
-         id="flowPara2415">shader.vert</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot2502"
-       style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.29148018"
-       transform="matrix(0.20486828,0,0,0.20486828,6726.4041,1211.7888)"
-       inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\render_pass_framebuffer_relationship.png"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-ydpi="15.131618"><flowRegion
-         id="flowRegion2493"
-         style="font-size:96px;stroke-width:1.29148018"><rect
-           id="rect2491"
-           width="2388.3584"
-           height="1050.6703"
-           x="-1174.2858"
-           y="-251.76607"
-           style="font-size:96px;stroke-width:1.29148018" /></flowRegion><flowPara
-         id="flowPara2500"
-         style="stroke-width:1.29148018">VK_FORMAT_R32_SFLOAT</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2510">VK_FORMAT_R32G32_SFLOAT</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2512">VK_FORMAT_R32G32B32_SFLOAT</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2514">VK_FORMAT_R32G32B32A32_SFLOAT</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2516">VK_FORMAT_R32G32_SINT</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2518">VK_FORMAT_R32G32B32A32_UINT</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2520">VK_FORMAT_R64_SFLOAT</flowPara></flowRoot>    <flowRoot
-       inkscape:export-ydpi="15.131618"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\render_pass_framebuffer_relationship.png"
-       transform="matrix(0.20486828,0,0,0.20486828,6640.7731,1211.7888)"
-       style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.29148018"
-       id="flowRoot2544"
-       xml:space="preserve"><flowRegion
-         style="font-size:96px;stroke-width:1.29148018"
-         id="flowRegion2528"><rect
-           style="font-size:96px;stroke-width:1.29148018"
-           y="-251.76607"
-           x="-1174.2858"
-           height="1050.6703"
-           width="2388.3584"
-           id="rect2526" /></flowRegion><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2573">float:</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2588">vec2:</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2575">vec3:</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2577">vec4:</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2580">ivec2:</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2582">uvec4:</flowPara><flowPara
-         style="stroke-width:1.29148018"
-         id="flowPara2584">double:</flowPara></flowRoot>    <flowRoot
-       inkscape:export-ydpi="15.131618"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\vertex_buffer.png"
-       transform="matrix(1.1081251,0,0,1.1083017,6272.6611,738.72535)"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.55740529"
-       id="flowRoot2596"
-       xml:space="preserve"><flowRegion
-         style="fill:#000000;fill-opacity:1;stroke-width:0.55740529"
-         id="flowRegion2592"><rect
-           style="fill:#000000;fill-opacity:1;stroke-width:0.55740529"
-           y="514.40778"
-           x="254.55844"
-           height="181.82748"
-           width="181.82742"
-           id="rect2590" /></flowRegion><flowPara
-         style="stroke-width:0.55740529"
-         id="flowPara2594">...</flowPara></flowRoot>    <path
+         id="flowPara2415">shader.vert</flowPara></flowRoot>    <path
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\render_pass_framebuffer_relationship.png"
@@ -2698,7 +2623,7 @@
            y="-251.76607"
            style="font-size:96px;stroke-width:1.29148018" /></flowRegion><flowPara
          id="flowPara3179"
-         style="stroke-width:1.29148018">= 4 * sizeof(Color) bytes</flowPara><flowPara
+         style="stroke-width:1.29148018">= 4 * sizeof(InstanceData) bytes</flowPara><flowPara
          style="stroke-width:1.29148018"
          id="flowPara3181">= VK_BUFFER_USAGE_VERTEX_BUFFER_BIT</flowPara><flowPara
          style="stroke-width:1.29148018"
@@ -2882,7 +2807,7 @@
          style="stroke-width:1.29148018"
          id="flowPara4179">= 1</flowPara><flowPara
          id="flowPara4181"
-         style="stroke-width:1.29148018">= sizeof(Vertex)</flowPara><flowPara
+         style="stroke-width:1.29148018">= sizeof(InstanceData)</flowPara><flowPara
          id="flowPara4183"
          style="stroke-width:1.29148018">= VK_VERTEX_INPUT_RATE_INSTANCE</flowPara></flowRoot>    <path
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.28699994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4513)"
@@ -3049,47 +2974,6 @@
          style="stroke-width:1.29148018">= VK_FORMAT_R32G32B32_SFLOAT</flowPara><flowPara
          id="flowPara5106"
          style="stroke-width:1.29148018">= offsetof(InstanceData, position)</flowPara></flowRoot>    <path
-       style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.28699982;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14799943, 5.14799943;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5588)"
-       d="m 6787.9021,1066.171 h -390.471"
-       id="path5582"
-       inkscape:connector-curvature="0"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-ydpi="15.131618" />
-    <path
-       style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.2869333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14773336, 5.14773336;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 6784.5761,891.87976 c -91.639,0 -78.119,173.07264 -180.274,173.07264"
-       id="path5592"
-       inkscape:connector-curvature="0"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-ydpi="15.131618" />
-    <path
-       style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.2869333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14773335, 5.14773335;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 6784.5761,711.63123 c -103.658,0 -111.169,354.53977 -338.015,354.53977"
-       id="path5602"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-ydpi="15.131618" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot5786"
-       style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.29148018"
-       transform="matrix(0.20486828,0,0,0.20486828,6640.7731,1177.2362)"
-       inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\render_pass_framebuffer_relationship.png"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-ydpi="15.131618"><flowRegion
-         id="flowRegion5770"
-         style="font-size:96px;stroke-width:1.29148018"><rect
-           id="rect5768"
-           width="2388.3584"
-           height="1050.6703"
-           x="-1174.2858"
-           y="-251.76607"
-           style="font-size:96px;stroke-width:1.29148018" /></flowRegion><flowPara
-         id="flowPara5784"
-         style="stroke-width:1.29148018"><flowSpan
-   style="font-weight:bold"
-   id="flowSpan5815">Note</flowSpan>: for format, we choose according to:</flowPara></flowRoot>    <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path6779"
@@ -3264,7 +3148,9 @@
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.28699994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14799942, 5.14799941999999966;stroke-dashoffset:0;stroke-opacity:1;font-variant-east_asian:normal;marker-end:url(#marker1568)"
        d="m 4150.2578,1083.6012 59.1069,60.2627"
        id="path1542"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="15.131618"
+       inkscape:export-ydpi="15.131618" />
     <rect
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#aaaaaa;stroke-width:2.52718544;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1572"
@@ -3550,7 +3436,9 @@
        d="M 3872.2884,880.75674 C 3408.2495,730.3149 3156.3887,831.55202 3085.4056,979.87498"
        id="path2054"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="15.131618"
+       inkscape:export-ydpi="15.131618" />
     <rect
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
@@ -3583,23 +3471,31 @@
        d="m 4546.5502,1250.3743 h 22.7497 v 20.4326 h -22.4369 z"
        id="path2742"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-xdpi="15.131618"
+       inkscape:export-ydpi="15.131618" />
     <path
        sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"
        id="path2750"
        d="m 4680.647,1250.3743 h 22.7497 v 20.4326 h -22.4369 z"
-       style="opacity:1;vector-effect:none;fill:#6edea6;fill-opacity:1;stroke:none;stroke-width:1.2869333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14773329, 5.14773328999999968;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;vector-effect:none;fill:#6edea6;fill-opacity:1;stroke:none;stroke-width:1.2869333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14773329, 5.14773328999999968;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="15.131618"
+       inkscape:export-ydpi="15.131618" />
     <path
        style="opacity:1;vector-effect:none;fill:#e38b85;fill-opacity:1;stroke:none;stroke-width:1.2869333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14773329, 5.14773329;stroke-dashoffset:0;stroke-opacity:1"
        d="m 4017.6814,650.739 116.8664,-134.84593 49.4435,223.24491 z"
        id="path2752"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="15.131618"
+       inkscape:export-ydpi="15.131618" />
     <path
        inkscape:connector-curvature="0"
        id="path2762"
        d="m 4122.5616,674.71161 116.8664,-134.84593 49.4435,223.24491 z"
-       style="opacity:1;vector-effect:none;fill:#6edea6;fill-opacity:1;stroke:none;stroke-width:1.2869333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14773335, 5.14773335;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;vector-effect:none;fill:#6edea6;fill-opacity:1;stroke:none;stroke-width:1.2869333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14773335, 5.14773335;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="15.131618"
+       inkscape:export-ydpi="15.131618" />
     <flowRoot
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
