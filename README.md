@@ -56,6 +56,8 @@ struct MyOtherDesc {
 <b>vkCmdBindDescriptorSet</b> - This is the mechanism to actually pass a DescriptorSet into a shader(aka pipeline). So basically passing the "arguments" like `shader(DescInstance,OtherDescInstance)`.
 </blockquote>
 
+Note that `vkUpdateDescriptorSets(...)` doesn't copy a buffer into the descriptor set, but rather gives the descriptor set a pointer to the buffer described by `VkDescriptorBufferInfo`. So then `vkUpdateDescriptorSets(...)` doesn't need to be called more than once for a descriptor set since modifying the buffer that a descriptor set points to will update what the descriptor set sees.
+
 ![descriptor_sets](descriptor_sets.png?raw=true "descriptor_sets")
 
 ## Pipeline barriers
