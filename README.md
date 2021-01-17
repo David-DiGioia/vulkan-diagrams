@@ -20,6 +20,10 @@ For clarity, some members of Vulkan objects are omitted and some names are sligh
 
 In this diagram, time progresses from top to bottom. Their names and setup are taken from [the rendering and presentation chapter of Vulkan Tutorial](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Rendering_and_presentation).
 
+Note: `vkAcquireNextImageKHR` won't signal the semaphore/fence until the image is ready, and the image won't be ready until enough previously acquired images are released with `vkQueuePresentKHR`. `vkAcquireNextImageKHR` will return the code `VK_NOT_READY` to indicate that the semaphore/fence hasn't been signaled immediately, but it will signal later once an image is acquired.
+
+If you have vsync enabled, `vkQueuePresentKHR` is the function that will block until the next vsync cycle.
+
 ![fence_synchronization](fence_synchronization.png?raw=true "fence_synchronization")
 
 ## Vertex buffer creation
