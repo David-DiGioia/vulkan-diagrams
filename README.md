@@ -90,7 +90,7 @@ Note that `vkUpdateDescriptorSets(...)` doesn't copy a buffer into the descripto
 
 ## Pipeline barriers
 
-This diagram shows the general use of pipeline barriers and how they create execution dependencies and memory dependencies. The specific example in the diagram shows the pipeline barrier which transfers the image's layout from VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL to VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL. This is performed after copying the image data from a buffer into the image, to prepare the image to be read from shaders. This example was taken [from the texture mapping chapter of Vulkan Tutorial](https://vulkan-tutorial.com/Texture_mapping/Images).
+This diagram shows the general use of pipeline barriers and how they create execution dependencies and memory dependencies. The specific example in the diagram shows the pipeline barrier which transfers the image's layout from `VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL` to `VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL`. This is performed after copying the image data from a buffer into the image, to prepare the image to be read from shaders. This example was taken [from the texture mapping chapter of Vulkan Tutorial](https://vulkan-tutorial.com/Texture_mapping/Images).
 
 The set names and quotes are taken directly from [the spec](https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#synchronization-dependencies).
 
