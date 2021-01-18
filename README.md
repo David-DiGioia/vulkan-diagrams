@@ -32,6 +32,12 @@ If you have vsync enabled, `vkQueuePresentKHR` is the function that will block u
 
 ## Render pass and swapchain
 
+In this diagram, a single renderpass is used for each command buffer, and each renderpass has multiple subpasses.
+
+You should use multiple subpasses instead of multiple render passes whenever possible. If a pass only needs to read from the one corresponding fragment in a previous pass, you can use a previous subpass as an input attachment and no additional render passes are needed. [Here is an example of how to do that](https://www.saschawillems.de/blog/2018/07/19/vulkan-input-attachments-and-sub-passes/). If you need random access to a previous pass (to implement a guassian blur, for example) then it would be appropriate to use multiple render passes.
+
+In the diagram we see that one of the attachments in the frame buffer has an image which is owned by the swapchain, but this is not mandatory. For example, you could render to a texture by creating your own `VkImage` with the usage flags `VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT` so it can be written into as a color attachment and then sampled from in a shader.
+
 ![render_pass_swapchain](render_pass_swapchain.png?raw=true "render_pass_swapchain")
 
 ## Descriptor sets
