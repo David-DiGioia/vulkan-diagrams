@@ -28,6 +28,24 @@ If you have vsync enabled, `vkQueuePresentKHR` is the function that will block u
 
 ## Vertex buffer creation
 
+NVIDIA has a [good article about memory management](https://developer.nvidia.com/vulkan-memory-management) which I recommend reading. The takeaway is that it's usually preferable to make big memory allocations with big buffers and to sub-allocate resources from those buffers. It includes the following descriptions of memory objects:
+
+<blockquote>
+<b>Heap</b> - Depending on the hardware and platform, the device will expose a fixed number of heaps, from which you can allocate certain amount of memory in total. Discrete GPUs with dedicated memory will be different to mobile or integrated solutions that share memory with the CPU. Heaps support different memory types which must be queried from the device.
+  
+<b>Memory type</b> - When creating a resource such as a buffer, Vulkan will provide information about which memory types are compatible with the resource. Depending on additional usage flags, the developer must pick the right type, and based on the type, the appropriate heap.
+
+<b>Memory property flags</b> - These flags encode caching behavior and whether we can map the memory to the host (CPU), or if the GPU has fast access to the memory.
+
+<b>Memory</b> - This object represents an allocation from a certain heap with a user-defined size.
+
+<b>Resource (Buffer/Image)</b> - After querying for the memory requirements and picking a compatible allocation, the memory is associated with the resource at a certain offset. This offset must fulfill the provided alignment requirements. After this we can start using our resource for actual work.
+
+<b>Sub-Resource (Offsets/View)</b> - It is not required to use a resource only in its full extent, just like in OpenGL we can bind ranges (e.g. varying the starting offset of a vertex-buffer) or make use of views (e.g. individual slice and mipmap of a texture array).
+</blockquote>
+
+Alternatively, [Vulkan Memory Allocator (VMA)](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator) is a good library that handles memory allocations for you.
+
 ![vertex_buffer](vertex_buffer.png?raw=true "vertex_buffer")
 
 ## Render pass and swapchain
