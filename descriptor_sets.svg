@@ -1441,9 +1441,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.088060172"
-     inkscape:cx="12875.269"
-     inkscape:cy="-2310.8122"
+     inkscape:zoom="0.17612034"
+     inkscape:cx="19156.726"
+     inkscape:cy="-2730.6951"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1451,7 +1451,7 @@
      showborder="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true" />
@@ -3863,8 +3863,8 @@
            style="font-size:96px;stroke-width:0.57679421" /></flowRegion><flowPara
          id="flowPara1686"
          style="stroke-width:0.57679421">...</flowPara></flowRoot>    <path
-       style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.28699994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14799951, 5.14799951;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1716)"
-       d="M 5370.6765,762.97305 V 1395.4359"
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.28699994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.14799967, 5.14799967;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1716)"
+       d="M 5370.6767,762.97308 V 1217.355"
        id="path1690"
        inkscape:connector-curvature="0"
        inkscape:export-xdpi="15.131618"
