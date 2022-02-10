@@ -1,5 +1,7 @@
 # vulkan-diagrams
 
+
+
 ## Contents
 
 - [Introduction](#introduction)
@@ -8,6 +10,7 @@
 - [Render pass and swapchain](#render-pass-and-swapchain)
 - [Descriptor sets](#descriptor-sets)
 - [Pipeline barriers](#pipeline-barriers)
+- [Pipeline stages and access types](#pipeline-stages-and-access-types)
 - [Vertex input and multiple bindings](#vertex-input-and-multiple-bindings)
 
 ## Introduction
@@ -94,9 +97,66 @@ This diagram shows the general use of pipeline barriers and how they create exec
 
 The set names and quotes are taken directly from [the spec](https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#synchronization-dependencies).
 
-(ctrl+f search for PDF version of spec: <b>Execution and Memory Dependencies</b>)
+(ctrl+f search for PDF version of spec: <i><b>Execution and Memory Dependencies</b></i>)
 
 ![pipeline_barriers](barrier.png?raw=true "pipeline_barriers")
+
+## Pipeline stages and access types
+
+When synchronizing using a pipeline barrier or subpass dependency, it's necessary to specify source and destination stages/access types. The following tables show each pipeline, all of their stages in the order they occur, and the access types supported by each of them. `VK_ACCESS_MEMORY_READ_BIT` and `VK_ACCESS_MEMORY_WRITE_BIT` are supported for all stages, but are not shown in the tables for clarity.
+
+There are corresponding `VkPipelineStageFlagBits` and `VkAccessFlagBits` for each item in the Stage and Access Types columns respectively.
+
+(ctrl+f search for PDF version of spec: <i><b>Table 4. Supported access types</b></i> and <i><b>The graphics pipeline executes the following stages</b></i>)
+
+Graphics pipeline:
+
+| Stage                            | Access Types                                                                                        |
+| -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Draw Indirect                    | Indirect Command Read                                                                               |
+| Index Input                      | Index Read                                                                                          |
+| Vertex Attribute Input           | Vertex Attribute Read                                                                               |
+| Vertex Shader                    | Uniform Read<br>Shader Read<br>Shader Write<br>Acceleration Structure Read                          |
+| Tessellation Control Shader      | Uniform Read<br>Shader Read<br>Shader Write<br>Acceleration Structure Read                          |
+| Tessellation Evaluation Shader   | Uniform Read<br>Shader Read<br>Shader Write<br>Acceleration Structure Read                          |
+| Geometry Shader                  | Uniform Read<br>Shader Read<br>Shader Write<br>Acceleration Structure Read                          |
+| Fragment Shading Rate Attachment | Fragment Shading Rate Attachment Read                                                               |
+| Early Fragment Tests             | Depth Stencil Attachment Read<br>Depth Stencil Attachment Write                                     |
+| Fragment Shader                  | Uniform Read<br>Shader Read<br>Shader Write<br>Input Attachment Read<br>Acceleration Structure Read |
+| Late Fragment Tests              | Depth Stencil Attachment Read<br>Depth Stencil Attachment Write                                     |
+| Color Attachment Output          | Color Attachment Read<br>Color Attachment Write                                                     |
+
+Compute pipeline:
+
+| Stage          | Access Types                                                               |
+| -------------- | -------------------------------------------------------------------------- |
+| Draw Indirect  | Indirect Command Read                                                      |
+| Compute Shader | Uniform Read<br>Shader Read<br>Shader Write<br>Acceleration Structure Read |
+
+Transfer pipeline:
+
+| Stage    | Access Types                    |
+| -------- | ------------------------------- |
+| Transfer | Transfer Read<br>Transfer Write |
+
+Host operations:
+
+| Stage | Access Types            |
+| ----- | ----------------------- |
+| Host  | Host Read<br>Host Write |
+
+Acceleration structure operations:
+
+| Stage                        | Access Types                                                                                                                   |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Acceleration Structure Build | Draw Indirect<br>Shader Read<br>Transfer Read<br>Transfer Write<br>Acceleration Structure Read<br>Acceleration Structure Write |
+
+Ray tracing pipeline:
+
+| Stage              | Access Types                                                               |
+| ------------------ | -------------------------------------------------------------------------- |
+| Draw Indirect      | Indirect Command Read                                                      |
+| Ray Tracing Shader | Uniform Read<br>Shader Read<br>Shader Write<br>Acceleration Structure Read |
 
 ## Vertex input and multiple bindings
 
