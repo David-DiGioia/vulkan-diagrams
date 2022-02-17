@@ -17,7 +17,7 @@
 
 Vulkan Diagrams is a collection of diagrams which are designed to serve as a quick reference for various topics in Vulkan. The diagrams show the Vulkan objects needed to accomplish common tasks (e.g. creating a vertex buffer) and the relationships between these objects.
 
-For clarity, some members of Vulkan objects are omitted and some names are slightly simplified (e.g. changing VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL to SHADER_READ_ONLY_OPTIMAL).
+For clarity, some members of Vulkan objects are omitted and some names are slightly simplified (e.g. changing `VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL` to `SHADER_READ_ONLY_OPTIMAL`).
 
 ## Fence synchronization
 
