@@ -1381,7 +1381,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.24907177"
-     inkscape:cx="8939.6873"
+     inkscape:cx="8088.527"
      inkscape:cy="-1570.645"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -1841,7 +1841,7 @@
          style="stroke-width:1.29148018"
          id="flowPara2115">= 0</flowPara><flowPara
          style="stroke-width:1.29148018"
-         id="flowPara2509">= sizeof(meshConstant)</flowPara></flowRoot>    <flowRoot
+         id="flowPara2509">= sizeof(MeshPushConstant)</flowPara></flowRoot>    <flowRoot
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
@@ -2171,9 +2171,9 @@
          style="stroke-width:1.29148018"
          id="flowPara2095-6">= VK_SHADER_STAGE_FRAGMENT_BIT</flowPara><flowPara
          style="stroke-width:1.29148018"
-         id="flowPara2115-3">= sizeof(meshConstant)</flowPara><flowPara
+         id="flowPara2115-3">= sizeof(MeshPushConstant)</flowPara><flowPara
          style="stroke-width:1.29148018"
-         id="flowPara2509-6">= sizeof(colorConstant)</flowPara></flowRoot>    <path
+         id="flowPara2509-6">= sizeof(ColorPushConstant)</flowPara></flowRoot>    <path
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.28699994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker13405)"
        d="m 2335.815,1222.4318 -320.4043,-7.3555"
        id="path13393"
