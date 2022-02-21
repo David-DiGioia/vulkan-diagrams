@@ -1,7 +1,5 @@
 # vulkan-diagrams
 
-
-
 ## Contents
 
 - [Introduction](#introduction)
@@ -9,6 +7,7 @@
 - [Vertex buffer creation](#vertex-buffer-creation)
 - [Render pass and swapchain](#render-pass-and-swapchain)
 - [Descriptor sets](#descriptor-sets)
+- [Push constants](#push-constants)
 - [Pipeline barriers](#pipeline-barriers)
 - [Pipeline stages and access types](#pipeline-stages-and-access-types)
 - [Vertex input and multiple bindings](#vertex-input-and-multiple-bindings)
@@ -90,6 +89,14 @@ struct MyOtherDesc {
 Note that `vkUpdateDescriptorSets(...)` doesn't copy a buffer into the descriptor set, but rather gives the descriptor set a pointer to the buffer described by `VkDescriptorBufferInfo`. So then `vkUpdateDescriptorSets(...)` doesn't need to be called more than once for a descriptor set since modifying the buffer that a descriptor set points to will update what the descriptor set sees.
 
 ![descriptor_sets](descriptor_sets.png?raw=true "descriptor_sets")
+
+## Push constants
+
+Push constants are a small amount of shader-accessible data that is written into the command buffer itself. The spec guarantees only 128 bytes of push constant space, though the exact limit can be found from `VkPhysicalDeviceLimits::maxPushConstantsSize`.
+
+The diagram shows how to use ranges and offsets to make some one range available from the vertex shader, and the other from the fragment shader, but it's also possible to specifiy only one range which is available from both with `stageFlags` set equal to `VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT`;
+
+![push constants](push_constants.png?raw=true "descriptor_sets")
 
 ## Pipeline barriers
 
