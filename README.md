@@ -3,6 +3,7 @@
 ## Contents
 
 - [Introduction](#introduction)
+- [Boilerplate](#boilerplate)
 - [Fence synchronization](#fence-synchronization)
 - [Vertex buffer creation](#vertex-buffer-creation)
 - [Render pass and swapchain](#render-pass-and-swapchain)
@@ -17,6 +18,18 @@
 Vulkan Diagrams is a collection of diagrams which are designed to serve as a quick reference for various topics in Vulkan. The diagrams show the Vulkan objects needed to accomplish common tasks (e.g. creating a vertex buffer) and the relationships between these objects.
 
 For clarity, some members of Vulkan objects are omitted and some names are slightly simplified (e.g. changing `VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL` to `SHADER_READ_ONLY_OPTIMAL`).
+
+## Boilerplate
+
+This diagram uses example values from my GPU, an NVIDIA GeForce GTX 1080. Notice that memory heap 2 is both `DEVICE_LOCAL` and `HOST_VISIBLE`, which is good for GPU accessible memory that needs to be frequently updated from the CPU since it allows us to update it directly without using a staging buffer. On my machine it's only 224 MB, but on machines with resizeable bar (AMD's marketing term for this is Smart Access Memory) this heap will be significantly bigger.
+
+Not shown in the diagram are the functions `vkEnumerateInstanceExtensionProperties(...)`, `vkEnumerateInstanceLayerProperties(...)`, and `vkEnumerateDeviceExtensionProperties(...)` to enumerate the available instance extensions, layers, and device extensions respectively.
+
+Running [vulkaninfo](https://vulkan.lunarg.com/doc/view/1.2.148.1/windows/vulkaninfo.html) will print out specs about your GPU that are queriable in Vulkan. To find this info about other GPUs, [gpuinfo](https://vulkan.gpuinfo.org/) is a good resource. If you want to temporarily override the validation layer settings you can use [Vulkan Configurator](https://vulkan.lunarg.com/doc/view/1.2.148.1/windows/vkconfig.html).
+
+Alternatively, [vk-bootstrap](https://github.com/charles-lunarg/vk-bootstrap) is a good library that handles the Vulkan boilerplate.
+
+![boiler_plate](boiler_plate.png?raw=true "boiler_plate")
 
 ## Fence synchronization
 
