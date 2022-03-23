@@ -17,7 +17,7 @@
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="descriptor_sets.svg"
-   inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
+   inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\vulkan-diagrams\descriptor_sets.png"
    inkscape:export-xdpi="16.935312"
    inkscape:export-ydpi="16.935312">
   <defs
@@ -1381,9 +1381,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35224068"
-     inkscape:cx="16936.87"
-     inkscape:cy="-622.64213"
+     inkscape:zoom="0.17612034"
+     inkscape:cx="13573.245"
+     inkscape:cy="-1611.0027"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2464,7 +2464,7 @@
        id="rect3874"
        width="631.5603"
        height="402.37906"
-       x="2671.9912"
+       x="2668.2878"
        y="1128.7656"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        inkscape:export-xdpi="15.131618"
@@ -2473,7 +2473,7 @@
        xml:space="preserve"
        id="flowRoot3882"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,3168.5281,1202.5546)"
+       transform="matrix(0.26458333,0,0,0.26458333,3164.8237,1202.5546)"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        inkscape:export-xdpi="15.131618"
        inkscape:export-ydpi="15.131618"><flowRegion
@@ -2491,7 +2491,7 @@
        id="rect3884"
        width="376.45062"
        height="96.671494"
-       x="2873.8826"
+       x="2870.1792"
        y="1279.6244"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        inkscape:export-xdpi="15.131618"
@@ -2500,7 +2500,7 @@
        xml:space="preserve"
        id="flowRoot3892"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,3205.1184,1356.2555)"
+       transform="matrix(0.26458333,0,0,0.26458333,3201.414,1356.2555)"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        inkscape:export-xdpi="15.131618"
        inkscape:export-ydpi="15.131618"><flowRegion
@@ -2517,7 +2517,7 @@
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
-       transform="matrix(0.45871355,0,0,0.45871355,3581.3828,1423.7969)"
+       transform="matrix(0.45871355,0,0,0.45871355,3577.6784,1423.7969)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.57679421"
        id="flowRoot4028"
        xml:space="preserve"><flowRegion
@@ -2535,7 +2535,7 @@
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        y="1376.2959"
-       x="2873.8826"
+       x="2870.1792"
        height="96.671494"
        width="376.45062"
        id="rect4030"
@@ -2544,7 +2544,7 @@
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
-       transform="matrix(0.26458333,0,0,0.26458333,3205.1184,1452.927)"
+       transform="matrix(0.26458333,0,0,0.26458333,3201.414,1452.927)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot4038"
        xml:space="preserve"><flowRegion
@@ -2561,7 +2561,7 @@
        xml:space="preserve"
        id="flowRoot4046"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.57679421"
-       transform="matrix(0.45871355,0,0,0.45871355,3581.3828,1520.4684)"
+       transform="matrix(0.45871355,0,0,0.45871355,3577.6784,1520.4684)"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        inkscape:export-xdpi="15.131618"
        inkscape:export-ydpi="15.131618"><flowRegion
@@ -2581,13 +2581,13 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path4074"
-       d="m 3071.6874,1168.5236 -56.1121,110.4921"
+       d="m 3067.983,1168.5236 -56.1121,110.4921"
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:1.28699994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4086)" />
     <flowRoot
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
-       transform="matrix(0.19574864,0,0,0.19574864,3136.183,1249.5443)"
+       transform="matrix(0.19574864,0,0,0.19574864,3132.4786,1249.5443)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot4082"
        xml:space="preserve"><flowRegion
@@ -2600,7 +2600,7 @@
            width="891.42859"
            id="rect4076" /></flowRegion><flowPara
          id="flowPara4080">pSetLayouts</flowPara></flowRoot>    <flowRoot
-       transform="matrix(0.87138607,0,0,2.5489477,3846.6655,1867.5071)"
+       transform="matrix(0.87138607,0,0,2.5489477,3842.9611,1867.5071)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:95.99923706px;line-height:1.25;font-family:'Baskerville Old Face';-inkscape-font-specification:'Baskerville Old Face, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.02781725"
        id="flowRoot4158"
        xml:space="preserve"
@@ -2620,7 +2620,7 @@
        xml:space="preserve"
        id="flowRoot4168"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.55740529"
-       transform="matrix(0.63561156,0,0,0.63571281,2480.5728,1262.0432)"
+       transform="matrix(0.63561156,0,0,0.63571281,2476.8684,1262.0432)"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        inkscape:export-xdpi="15.131618"
        inkscape:export-ydpi="15.131618"><flowRegion
@@ -2746,7 +2746,7 @@
            width="891.42859"
            id="rect5681" /></flowRegion><flowPara
          id="flowPara5685">dstSet</flowPara></flowRoot>    <flowRoot
-       transform="matrix(0.19574864,0,0,0.19574864,2761.8066,1302.0318)"
+       transform="matrix(0.19574864,0,0,0.19574864,2756.5146,1300.9734)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot5845"
        xml:space="preserve"
@@ -2789,7 +2789,7 @@
        inkscape:export-ydpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png" />
     <flowRoot
-       transform="matrix(0.19574864,0,0,0.19574864,3552.641,1241.6976)"
+       transform="matrix(0.19574864,0,0,0.19574864,3535.1231,1252.3204)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot6123"
        xml:space="preserve"
@@ -2804,7 +2804,7 @@
            height="162.61388"
            width="1556.6373"
            id="rect6117" /></flowRegion><flowPara
-         id="flowPara6121">vkAllocateDescriptorSets</flowPara></flowRoot>    <rect
+         id="flowPara6121">vkAllocateDescriptorSets(...)</flowPara></flowRoot>    <rect
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
@@ -2818,7 +2818,7 @@
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
-       transform="matrix(0.26458333,0,0,0.26458333,4755.6433,145.95043)"
+       transform="matrix(0.26458333,0,0,0.26458333,4730.1487,145.95043)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot1989"
        xml:space="preserve"><flowRegion
@@ -2827,11 +2827,11 @@
            style="font-size:96px"
            y="-251.76607"
            x="-1174.2858"
-           height="173.77171"
-           width="1580.0947"
+           height="181.80153"
+           width="1688.4972"
            id="rect1983" /></flowRegion><flowPara
          style="font-weight:bold"
-         id="flowPara1987">vkCmdBindDescriptorSets</flowPara></flowRoot>    <rect
+         id="flowPara1987">vkCmdBindDescriptorSets(...)</flowPara></flowRoot>    <rect
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:2.52718544;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1991"
        width="704.83179"
@@ -2984,24 +2984,7 @@
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
        inkscape:export-xdpi="15.131618"
        inkscape:export-ydpi="15.131618" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot2581"
-       style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,4755.6433,436.25626)"
-       inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
-       inkscape:export-xdpi="15.131618"
-       inkscape:export-ydpi="15.131618"><flowRegion
-         id="flowRegion2577"
-         style="font-size:96px"><rect
-           id="rect2575"
-           width="1580.0947"
-           height="173.77171"
-           x="-1174.2858"
-           y="-251.76607"
-           style="font-size:96px" /></flowRegion><flowPara
-         id="flowPara2579"
-         style="font-weight:bold">vkCmdBindDescriptorSets</flowPara></flowRoot>    <rect
+    <rect
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
@@ -3971,5 +3954,22 @@
            x="345.71429"
            y="179.66251" /></flowRegion><flowPara
          style="font-weight:bold;stroke-width:0.55740529"
-         id="flowPara3551">VkBuffer</flowPara></flowRoot>  </g>
+         id="flowPara3551">VkBuffer</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2708"
+       style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,4730.1487,435.95218)"
+       inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
+       inkscape:export-xdpi="15.131618"
+       inkscape:export-ydpi="15.131618"><flowRegion
+         id="flowRegion2704"
+         style="font-size:96px"><rect
+           id="rect2702"
+           width="1688.4972"
+           height="181.80153"
+           x="-1174.2858"
+           y="-251.76607"
+           style="font-size:96px" /></flowRegion><flowPara
+         id="flowPara2706"
+         style="font-weight:bold">vkCmdBindDescriptorSets(...)</flowPara></flowRoot>  </g>
 </svg>

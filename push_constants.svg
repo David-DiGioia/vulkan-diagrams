@@ -1381,8 +1381,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.24907177"
-     inkscape:cx="8088.527"
-     inkscape:cy="-1570.645"
+     inkscape:cx="7524.8391"
+     inkscape:cy="-2260.3139"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1759,7 +1759,7 @@
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
-       transform="matrix(0.26458333,0,0,0.26458333,2766.284,1051.9976)"
+       transform="matrix(0.26458333,0,0,0.26458333,2749.0077,1051.9976)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot1989"
        xml:space="preserve"><flowRegion
@@ -1772,7 +1772,7 @@
            width="1580.0947"
            id="rect1983" /></flowRegion><flowPara
          style="font-weight:bold"
-         id="flowPara1987">vkCmdPushConstants</flowPara></flowRoot>    <rect
+         id="flowPara1987">vkCmdPushConstants(...)</flowPara></flowRoot>    <rect
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:0.29126216;stroke:#000000;stroke-width:2.52718544;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1991"
        width="612.41364"
@@ -2118,7 +2118,7 @@
        inkscape:export-ydpi="15.131618"
        inkscape:export-xdpi="15.131618"
        inkscape:export-filename="C:\Users\David\Documents\graphics_notes\vulkan\renders\descriptor_sets.png"
-       transform="matrix(0.26458333,0,0,0.26458333,2766.284,1226.9935)"
+       transform="matrix(0.26458333,0,0,0.26458333,2749.0077,1226.9935)"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot1989-2"
        xml:space="preserve"><flowRegion
@@ -2131,7 +2131,7 @@
            width="1580.0947"
            id="rect1983-3" /></flowRegion><flowPara
          style="font-weight:bold"
-         id="flowPara1987-3">vkCmdPushConstants</flowPara></flowRoot>    <flowRoot
+         id="flowPara1987-3">vkCmdPushConstants(...)</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot2033-9"
        style="font-style:normal;font-weight:normal;font-size:96px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.29148018"
