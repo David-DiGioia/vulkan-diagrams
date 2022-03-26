@@ -4,14 +4,14 @@
 
 - [Introduction](#introduction)
 - [Boilerplate](#boilerplate)
-- [Fence synchronization](#fence-synchronization)
-- [Vertex buffer creation](#vertex-buffer-creation)
 - [Render pass and swapchain](#render-pass-and-swapchain)
+- [Vertex buffer creation](#vertex-buffer-creation)
+- [Vertex input and multiple bindings](#vertex-input-and-multiple-bindings)
 - [Descriptor sets](#descriptor-sets)
 - [Push constants](#push-constants)
 - [Pipeline barriers](#pipeline-barriers)
 - [Pipeline stages and access types](#pipeline-stages-and-access-types)
-- [Vertex input and multiple bindings](#vertex-input-and-multiple-bindings)
+- [Render loop](#render-loop)
 
 ## Introduction
 
@@ -31,15 +31,15 @@ Alternatively, [vk-bootstrap](https://github.com/charles-lunarg/vk-bootstrap) is
 
 ![boiler_plate](boiler_plate.png?raw=true "boiler_plate")
 
-## Fence synchronization
+## Render pass and swapchain
 
-In this diagram, time progresses from top to bottom. Their names and setup are taken from [the rendering and presentation chapter of Vulkan Tutorial](https://vulkan-tutorial.com/Drawing_a_triangle/Drawing/Rendering_and_presentation).
+In this diagram, a single renderpass is used for each command buffer, and each renderpass has multiple subpasses.
 
-Note: `vkAcquireNextImageKHR` won't signal the semaphore/fence until the image is ready, and the image won't be ready until enough previously acquired images are released with `vkQueuePresentKHR`. `vkAcquireNextImageKHR` will return the code `VK_NOT_READY` to indicate that the semaphore/fence hasn't been signaled immediately, but it will signal later once an image is acquired.
+You should use multiple subpasses instead of multiple render passes whenever possible. If a pass only needs to read from the one corresponding fragment in a previous pass, you can use a previous subpass as an input attachment and no additional render passes are needed. [Here is an example of how to do that](https://www.saschawillems.de/blog/2018/07/19/vulkan-input-attachments-and-sub-passes/). If you need random access to a previous pass (to implement a guassian blur, for example) then it would be appropriate to use multiple render passes.
 
-If you have vsync enabled, `vkQueuePresentKHR` is the function that will block until the next vsync cycle.
+In the diagram we see that one of the attachments in the frame buffer has an image which is owned by the swapchain, but this is not mandatory. For example, you could render to a texture by creating your own `VkImage` with the usage flags `VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT` so it can be written into as a color attachment and then sampled from in a shader.
 
-![fence_synchronization](fence_synchronization.png?raw=true "fence_synchronization")
+![render_pass_swapchain](render_pass_swapchain.png?raw=true "render_pass_swapchain")
 
 ## Vertex buffer creation
 
@@ -63,15 +63,30 @@ Alternatively, [Vulkan Memory Allocator (VMA)](https://github.com/GPUOpen-Librar
 
 ![vertex_buffer](vertex_buffer.png?raw=true "vertex_buffer")
 
-## Render pass and swapchain
+## Vertex input and multiple bindings
 
-In this diagram, a single renderpass is used for each command buffer, and each renderpass has multiple subpasses.
+`VkPipelineVertexInputStateCreateInfo` allows us to specify how our vertices are stored in memory. It is composed of an array of `VkVertexInputAttributeDescription`s and an array of `VkVertexInputBindingDescription`s.
 
-You should use multiple subpasses instead of multiple render passes whenever possible. If a pass only needs to read from the one corresponding fragment in a previous pass, you can use a previous subpass as an input attachment and no additional render passes are needed. [Here is an example of how to do that](https://www.saschawillems.de/blog/2018/07/19/vulkan-input-attachments-and-sub-passes/). If you need random access to a previous pass (to implement a guassian blur, for example) then it would be appropriate to use multiple render passes.
+As the name implies, we will have one binding description for each binding. In this example, we see that binding 0 has `VK_VERTEX_INPUT_RATE_VERTEX` as its input rate, which means it increments to the next set of data `stride` apart for every _vertex_. Binding 1, on the other hand, has `VK_VERTEX_INPUT_RATE_INSTANCE` as its input rate, so we increment to the next set of data `stride` apart only for every _instance_. We specify the number of instances and vertices we draw in `vkCmdDraw`.
 
-In the diagram we see that one of the attachments in the frame buffer has an image which is owned by the swapchain, but this is not mandatory. For example, you could render to a texture by creating your own `VkImage` with the usage flags `VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT` so it can be written into as a color attachment and then sampled from in a shader.
+We have one vertex attribute for each member of the struct associated with that binding. For example, binding 0 has 3 vertex attributes since the vertex buffer bound to binding 0 is a buffer of `Vertex` structs which has members `position`, `normal` and `texCoord`. Binding 1 has only 2 vertex attributes since `InstanceData` has only 2 members. The format of each vertex attribute is determined by the size and type of that attribute, so some common choices include:
 
-![render_pass_swapchain](render_pass_swapchain.png?raw=true "render_pass_swapchain")
+```
+float:	VK_FORMAT_R32_SFLOAT
+vec2:	VK_FORMAT_R32G32_SFLOAT
+vec3:	VK_FORMAT_R32G32B32_SFLOAT
+vec4:	VK_FORMAT_R32G32B32A32_SFLOAT
+ivec2:	VK_FORMAT_R32G32_SINT
+uvec4:	VK_FORMAT_R32G32B32A32_UINT
+double:	VK_FORMAT_R64_SFLOAT
+etc.
+```
+
+In this example we make one call to `vkCmdBindVertexBuffer` and pass in arrays to bind both buffers at the same time, but note it would have been possible to make two separate calls so long as in one call we specify `firstBinding = 0` and in the other `firstBinding = 1`.
+
+Lastly, notice that the vertex shader is completely blind to which binding each of its input variables are coming from. The vertex shader only specifies the locations, then the bound buffer the data comes from for each variable is determined by the corresponding `VkVertexInputAttributeDescription`.
+
+![vertex_input](vertex_input.png?raw=true "vertex_input")
 
 ## Descriptor sets
 
@@ -178,27 +193,16 @@ Ray tracing pipeline:
 | Draw Indirect      | Indirect Command Read                                                      |
 | Ray Tracing Shader | Uniform Read<br>Shader Read<br>Shader Write<br>Acceleration Structure Read |
 
-## Vertex input and multiple bindings
+## Render loop
 
-`VkPipelineVertexInputStateCreateInfo` allows us to specify how our vertices are stored in memory. It is composed of an array of `VkVertexInputAttributeDescription`s and an array of `VkVertexInputBindingDescription`s.
+In this diagram, time progresses from top to bottom. The [C++ implementation of this render loop](https://github.com/David-DiGioia/pumpkin/blob/f0d86f5b561abbb124a6086ec724b96915090e87/src/renderer/vulkan_renderer.cpp#L41) can be found on my [(WIP) Pumpkin game engine repository](https://github.com/David-DiGioia/pumpkin).
 
-As the name implies, we will have one binding description for each binding. In this example, we see that binding 0 has `VK_VERTEX_INPUT_RATE_VERTEX` as its input rate, which means it increments to the next set of data `stride` apart for every _vertex_. Binding 1, on the other hand, has `VK_VERTEX_INPUT_RATE_INSTANCE` as its input rate, so we increment to the next set of data `stride` apart only for every _instance_. We specify the number of instances and vertices we draw in `vkCmdDraw`.
+Notice that it is ambiguous when `vkQueuePresentKHR` is done presenting because the API does not accept any sync primitives to signal when it's done. Instead you can only know the swapchain image is done being used when `vkAcquireNextImageKHR` returns its index and signals a sync primitive indicating it's ready.
 
-We have one vertex attribute for each member of the struct associated with that binding. For example, binding 0 has 3 vertex attributes since the vertex buffer bound to binding 0 is a buffer of `Vertex` structs which has members `position`, `normal` and `texCoord`. Binding 1 has only 2 vertex attributes since `InstanceData` has only 2 members. The format of each vertex attribute is determined by the size and type of that attribute, so some common choices include:
+Even though there are two different timelines drawn of `vkQueueSubmit` for each frame in flight, they both are submitting to the same queue.
 
-```
-float:	VK_FORMAT_R32_SFLOAT
-vec2:	VK_FORMAT_R32G32_SFLOAT
-vec3:	VK_FORMAT_R32G32B32_SFLOAT
-vec4:	VK_FORMAT_R32G32B32A32_SFLOAT
-ivec2:	VK_FORMAT_R32G32_SINT
-uvec4:	VK_FORMAT_R32G32B32A32_UINT
-double:	VK_FORMAT_R64_SFLOAT
-etc.
-```
+Note: `vkAcquireNextImageKHR` won't signal the semaphore/fence until the image is ready, and the image won't be ready until enough previously acquired images are released with `vkQueuePresentKHR`. `vkAcquireNextImageKHR` will return the code `VK_NOT_READY` to indicate that the semaphore/fence hasn't been signaled immediately, but it will signal later once an image is acquired.
 
-In this example we make one call to `vkCmdBindVertexBuffer` and pass in arrays to bind both buffers at the same time, but note it would have been possible to make two separate calls so long as in one call we specify `firstBinding = 0` and in the other `firstBinding = 1`.
+If you have vsync enabled, `vkQueuePresentKHR` is the function that will block until the next vsync cycle, at least on my GeForce GTX 1080.
 
-Lastly, notice that the vertex shader is completely blind to which binding each of its input variables are coming from. The vertex shader only specifies the locations, then the bound buffer the data comes from for each variable is determined by the corresponding `VkVertexInputAttributeDescription`.
-
-![vertex_input](vertex_input.png?raw=true "vertex_input")
+![render_loop](render_loop.png?raw=true "render_loop")
