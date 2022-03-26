@@ -197,7 +197,7 @@ Ray tracing pipeline:
 
 In this diagram, time progresses from top to bottom. The [C++ implementation of this render loop](https://github.com/David-DiGioia/pumpkin/blob/f0d86f5b561abbb124a6086ec724b96915090e87/src/renderer/vulkan_renderer.cpp#L41) can be found on my [(WIP) Pumpkin game engine repository](https://github.com/David-DiGioia/pumpkin).
 
-Notice that it is ambiguous when `vkQueuePresentKHR` is done presenting because the API does not accept any sync primitives to signal when it's done. Instead you can only know the swapchain image is done being used when `vkAcquireNextImageKHR` returns its index and signals a sync primitive indicating it's ready.
+Notice that it is ambiguous when `vkQueuePresentKHR` is done presenting because the API does not accept any sync primitives to signal when it's done. Instead you can only know the swapchain image is done being used when `vkAcquireNextImageKHR` returns its index and signals a sync primitive indicating it's ready. Alternatively, you could use the [VK_KHR_present_wait](https://www.khronos.org/registry/vulkan/specs/1.3-extensions/man/html/VK_KHR_present_wait.html) extension if you want to explicitly wait for presentation to finish.
 
 Even though there are two different timelines drawn of `vkQueueSubmit` for each frame in flight, they both are submitting to the same queue.
 
