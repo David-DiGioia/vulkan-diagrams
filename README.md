@@ -12,6 +12,7 @@
 - [Pipeline barriers](#pipeline-barriers)
 - [Pipeline stages and access types](#pipeline-stages-and-access-types)
 - [Render loop](#render-loop)
+- [Ray tracing](#ray-tracing)
 
 ## Introduction
 
@@ -208,3 +209,42 @@ Note: `vkAcquireNextImageKHR` won't signal the semaphore/fence until the image i
 If you have vsync enabled, `vkQueuePresentKHR` is the function that will block until the next vsync cycle, at least on my GeForce GTX 1080.
 
 ![render_loop](render_loop.png?raw=true "render_loop")
+
+## Ray tracing
+
+Ray tracing in Vulkan consists of building acceleration structures, creating a shader binding table (SBT), and then tracing the rays with `vkCmdTraceRaysKHR(...)`. 
+
+Most of the work of building the acceleration structures is done by the driver, but the application developer is responsible for placing instances within a top-level acceleration structure (TLAS), grouping their geometry into bottom-level acceleration structures (BLASes) and within that BLAS grouping the triangles into geometries. How this is done can have a significant impact on performance. I've written an [article on GPUOpen](https://gpuopen.com/learn/improving-rt-perf-with-rra/) that goes into detail of best practices for ray tracing performance.
+
+The first diagram shows the Vulkan objects needed to build a BLAS.
+
+![ray_tracing_build_blas](ray_tracing_build_blas.png?raw=true "ray_tracing_build_blas")
+
+Note that almost no implementation supports `VkPhysicalDeviceAccelerationStructureFeaturesKHR::accelerationStructureHostCommands` so most likely you will need to build the acceleration structures on the device, as pictured in the diagrams. This makes compacting BLASes more complicated because it requires two queue submissions. The process to compact a BLAS is as follows:
+
+1) Add `VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR` flag to `VkAccelerationStructureBuildGeometryInfoKHR::flags` for original acceleration structure that is built.
+
+2) Create original acceleration structure.
+
+3) Create `VkQueryPool` with a `VkQueryPoolCreateInfo::queryType` of `VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_KHR`.
+
+4) Query the compacted size with `vkCmdWriteAccelerationStructuresPropertiesKHR(...)`.
+
+5) Submit the command buffer then get the query results with `vkGetQueryPoolResults(...)`.
+
+6) Create a `VkAccelerationStructureKHR` with a `VkBuffer` with compacted size from query.
+
+7) Start recording new command buffer.
+
+8) Copy the original acceleration structure to the compacted one using `vkCmdCopyAccelerationStructureKHR(...)` with
+   `VkCopyAccelerationStructureInfoKHR::mode` set to `VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_KHR`.
+
+9) Submit command buffer.
+
+The next diagram shows the Vulkan objects needed to build a TLAS.
+
+![ray_tracing_build_tlas](ray_tracing_build_tlas.png?raw=true "ray_tracing_build_tlas")
+
+Lastly, the shader binding table.
+
+![ray_tracing_sbt](ray_tracing_sbt.png?raw=true "ray_tracing_sbt")
