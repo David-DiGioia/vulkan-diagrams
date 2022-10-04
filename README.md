@@ -214,7 +214,7 @@ If you have vsync enabled, `vkQueuePresentKHR` is the function that will block u
 
 Ray tracing in Vulkan consists of building acceleration structures, creating a shader binding table (SBT), and then tracing the rays with `vkCmdTraceRaysKHR(...)`. 
 
-Most of the work of building the acceleration structures is done by the driver, but the application developer is responsible for placing instances within a top-level acceleration structure (TLAS), grouping their geometry into bottom-level acceleration structures (BLASes) and within that BLAS grouping the triangles into geometries. How this is done can have a significant impact on performance. I've written an [article on GPUOpen](https://gpuopen.com/learn/improving-rt-perf-with-rra/) that goes into detail of best practices for ray tracing performance.
+Most of the work of building the acceleration structures is done by the driver, but the application developer is responsible for placing instances within a top-level acceleration structure (TLAS), grouping their primitives into bottom-level acceleration structures (BLASes) and within that BLAS grouping the primitives into geometries. How this is done can have a significant impact on performance. I've written an [article on GPUOpen](https://gpuopen.com/learn/improving-rt-perf-with-rra/) that goes into detail of best practices for ray tracing performance.
 
 The first diagram shows the Vulkan objects needed to build a BLAS.
 
