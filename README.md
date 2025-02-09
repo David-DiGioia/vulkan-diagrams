@@ -248,3 +248,7 @@ The next diagram shows the Vulkan objects needed to build a TLAS.
 Lastly, the ray tracing pipeline and shader binding table.
 
 ![ray_tracing_sbt](ray_tracing_sbt.png?raw=true "ray_tracing_sbt")
+
+If these diagrams have been helpful to you, consider supporting me:
+
+<a href="https://www.buymeacoffee.com/daviddigioia" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
